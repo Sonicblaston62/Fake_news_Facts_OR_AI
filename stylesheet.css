@@ -79,7 +79,7 @@ header p {
 .video-wrapper {
   position: relative;
   height: 500px;
-  width: 1000px;
+  width: 800px;
   margin: 0 auto;
   cursor: pointer;
   transition: all 0.3s ease;
