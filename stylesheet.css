@@ -11,6 +11,7 @@ body {
   color: #333;
   line-height: 1.6;
   padding: 20px;
+  transition: background-color 0.3s ease;
 }
 
 h1,
@@ -75,15 +76,25 @@ header p {
   margin: 40px 0;
 }
 
-video {
+.video-wrapper {
+  position: relative;
   max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  height: 400px;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Enlarge video when clicked */
+.video-wrapper.enlarged iframe {
+  transform: scale(2);
   transition: transform 0.3s ease-in-out;
 }
 
-video:hover {
-  transform: scale(1.05);
+/* Dim the background when video is enlarged */
+body.dimmed {
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
 }
 
 /* Credits Section */
@@ -119,7 +130,21 @@ footer {
   padding: 20px;
   background-color: #333;
   color: white;
-  border-radius: 8px;
+  border-radius: 8px; /* Video Section */
+  .video-container {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* This creates a 16:9 aspect ratio */
+    background-color: #000; /* Optional: Gives a background color to the wrapper */
+    margin: 0 auto;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
   margin-top: 50px;
 }
 
